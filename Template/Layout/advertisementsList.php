@@ -1,6 +1,6 @@
 <?php
-    include 'Model/User.php';
-    include 'Model/Advertisements.php'
+    include '../../src/Model/User.php';
+    include '../../src/Model/Advertisements.php'
 ?>
 <!DOCTYPE html>
 <html lang="">
@@ -44,6 +44,26 @@
             <input type="submit" value="Submit">
         </form>
     </div>
+    <table class="Table">
+        <tr>
+            <th>
+                Usernames
+            </th>
+            <th>
+                Titles
+            </th>
+
+            <?php
+            $advertisementObj = new Advertisements();
+            $results = $advertisementObj->showAdvertisements();
+
+            foreach($results as $row){
+
+                echo "<tr>" . "<td>" . $row["name"] . "</td>" . "<td>" . $row["title"] . "</td>" . "</tr>";
+            }
+            ?>
+        </tr>
+    </table>
     <script>
         document.getElementById('createAdvertisementForm').addEventListener('submit', function(event) {
             event.preventDefault(); // Prevent the default form submission
@@ -52,7 +72,7 @@
             var formData = new FormData(this);
 
             // Send the form data to the server using fetch
-            fetch('Controller/advertisementController.php', {
+            fetch('src/Controller/advertisementController.php', {
                 method: 'POST',
                 body: formData
             })
@@ -65,7 +85,7 @@
                             text: "Advertisement created successfully!",
                             icon: "success"
                         }).then(() => {
-                            window.location.href = "advertisements"; // Adjust the URL as needed
+                            window.location.href = "Template/Layout/advertisements"; // Adjust the URL as needed
                         });
                     } else {
                         // Show an error alert with the error message

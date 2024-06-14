@@ -1,7 +1,7 @@
 RewriteEngine ON
 
-RewriteRule ^users?$ usersList.php
+RewriteRule ^users?$ Template/Layout/usersList.php
 
-RewriteRule ^advertisements?$ advertisementsList.php
+RewriteRule ^advertisements?$ Template/Layout/advertisementsList.php
 
 RewriteRule ^home?$ index.php

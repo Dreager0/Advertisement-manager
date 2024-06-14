@@ -5,14 +5,14 @@
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <!--Configuring the head of the html-->
     <meta charset="UTF-8">
     <title>Advertisements</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Adding the stylesheet to the html-->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="Template/CSS/styles.css">
 </head>
 <body>
     <!--Creating the navigation bar-->

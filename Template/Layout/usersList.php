@@ -1,5 +1,5 @@
 <?php
-    include 'Model/User.php'
+    include '../../src/Model/User.php'
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,7 +29,7 @@
         <input type="submit" value="Submit">
     </form>
 </div>
-<table class="userTable">
+<table class="Table">
     <tr>
         <th colspan="2">
             Usernames
@@ -66,8 +66,8 @@
         var formData = new FormData(this);
 
         // Send the form data to the server using fetch
-        fetch('Controller/advertisementController.php', {
-            method: 'POST',
+        fetch('src/Controller/userController.php', {
+            method: 'Post',
             body: formData
         })
             .then(response => response.json()) // Parse the JSON response
@@ -79,7 +79,7 @@
                         text: "Advertisement created successfully!",
                         icon: "success"
                     }).then(() => {
-                        window.location.href = "advertisements"; // Adjust the URL as needed
+                        window.location.href = "users"; // Adjust the URL as needed
                     });
                 } else {
                     // Show an error alert with the error message
