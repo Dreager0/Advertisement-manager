@@ -23,13 +23,6 @@ class Advertisements extends DB
         }
         return false;
     }
-    public function getAdvertisements(){
-        $sql = "SELECT * FROM advertisements";
-        $stmt = $this->connect()->prepare($sql);
-        $stmt->execute();
-
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    }
     public function showAdvertisements() {
         // Assuming you have a PDO connection stored in $this->conn
         $sql = "SELECT advertisements.title, users.name 
