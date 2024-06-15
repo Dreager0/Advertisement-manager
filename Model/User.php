@@ -5,14 +5,16 @@
 
 require_once 'DB.php';
 
-class User extends DB {
+class User extends DB
+{
     /**
      * Creates a new user in the database.
      *
      * @param string $name The name of the user to create.
      * @return bool True on success, false on failure.
      */
-    public function createUser($name) {
+    public function createUser($name)
+    {
         $sql = 'INSERT INTO users (name) VALUES (:name)';
         $pdo = $this->connect();
         if ($pdo) {
@@ -33,7 +35,8 @@ class User extends DB {
      *
      * @return array An array of all users.
      */
-    public function getUsers() {
+    public function getUsers()
+    {
         $sql = "SELECT * FROM users";
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute();
@@ -45,7 +48,8 @@ class User extends DB {
      *
      * @return array An array of all users.
      */
-    public function showUsers() {
+    public function showUsers()
+    {
         return $this->getUsers();
     }
 }

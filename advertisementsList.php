@@ -40,7 +40,7 @@ include('head.php');
             // Fetch user data and populate the select element
             $userObj = new User();
             $results = $userObj->showUsers();
-            foreach($results as $row){
+            foreach ($results as $row) {
                 echo "<option value=\"" . htmlspecialchars($row["id"]) . "\">" . htmlspecialchars($row["name"]) . "</option>";
             }
             ?>
@@ -58,14 +58,14 @@ include('head.php');
         // Fetch advertisement data and display it in table rows
         $advertisementObj = new Advertisements();
         $results = $advertisementObj->showAdvertisements();
-        foreach($results as $row){
+        foreach ($results as $row) {
             echo "<tr><td>" . htmlspecialchars($row["name"]) . "</td><td>" . htmlspecialchars($row["title"]) . "</td></tr>";
         }
         ?>
     </tr>
 </table>
 <script>
-    document.getElementById('createAdvertisementForm').addEventListener('submit', function(event) {
+    document.getElementById('createAdvertisementForm').addEventListener('submit', function (event) {
         event.preventDefault(); // Prevent the default form submission
 
         // Create a FormData object with the form's data

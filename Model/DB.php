@@ -1,8 +1,10 @@
 <?php
+
 /**
  * The DB class provides a connection to the database.
  */
-class DB {
+class DB
+{
     private $host = "localhost";
     private $user = "root";
     private $pwd = "";
@@ -13,7 +15,8 @@ class DB {
      *
      * @return PDO|null The PDO connection object on success, or null on failure.
      */
-    protected function connect() {
+    protected function connect()
+    {
         $dsn = 'mysql:host=' . $this->host . ';dbname=' . $this->dbName;
         try {
             $pdo = new PDO($dsn, $this->user, $this->pwd);

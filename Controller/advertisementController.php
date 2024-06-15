@@ -29,7 +29,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
  * @param string $title The title of the advertisement.
  * @return array The result of the operation, including success status and message.
  */
-function advertisementInsert($id, $title) {
+function advertisementInsert($id, $title)
+{
     $advertisement = new Advertisements();
     if ($advertisement->createAdvertisement($id, $title)) {
         return ["success" => true];
@@ -44,7 +45,9 @@ function advertisementInsert($id, $title) {
  * @param string $id The id of the advertisement to delete.
  * @return array The result of the operation, including success status and message.
  */
-function advertisementDelete($id) {
+function advertisementDelete($id)
+{
     // TODO: Implement function
 }
+
 ?>

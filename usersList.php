@@ -48,7 +48,7 @@ include('head.php');
 
         $count = 0;
         // Loop through the user data and display it in table cells
-        foreach($results as $row){
+        foreach ($results as $row) {
             if ($count % 2 == 0) {
                 echo "<tr>";
             }
@@ -68,7 +68,7 @@ include('head.php');
 </table>
 <script>
     // Add an event listener for the form submission
-    document.getElementById('createUserForm').addEventListener('submit', function(event) {
+    document.getElementById('createUserForm').addEventListener('submit', function (event) {
         event.preventDefault(); // Prevent the default form submission
 
         // Create a FormData object with the form's data

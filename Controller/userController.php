@@ -27,7 +27,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
  * @param string $name The name of the user to create.
  * @return array The result of the operation, including success status and message.
  */
-function userInsert($name) {
+function userInsert($name)
+{
     $user = new User();
     if ($user->createUser($name)) {
         return ["success" => true];
@@ -42,7 +43,9 @@ function userInsert($name) {
  * @param string $name The name of the user to delete.
  * @return array The result of the operation, including success status and message.
  */
-function userDelete($name) {
+function userDelete($name)
+{
     // TODO: Implement function
 }
+
 ?>
